@@ -1,5 +1,5 @@
 # trybe-exercises
-# trybe-exercises
+
 # Trybe
 
 Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Lucas Costa](https://www.linkedin.com/in/lucas-costa-180191142/)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
