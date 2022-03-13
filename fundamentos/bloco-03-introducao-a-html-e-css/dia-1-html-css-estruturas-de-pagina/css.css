@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+body {
+    font-family: sans-serif;
+    background: rgb(11, 207, 241)
+    
+}
+header {
+    text-align: center;
+}
+img {
+    gap: 1rem;
+    width: 20rem;
+}
+
+.img-head {
+    text-align: center;
+}
+
+.container {
+    background: rgb(224, 8, 8);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: rgba(184, 132, 132, 0.466);
+    text-align: center;
+    
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: rgb(236, 236, 236);
+  font-size: 18px;
+  transition: 0.2s; 
+  border-radius: ; 
+}
+
+ul li:hover {
+    background: #ddd;
+  }
