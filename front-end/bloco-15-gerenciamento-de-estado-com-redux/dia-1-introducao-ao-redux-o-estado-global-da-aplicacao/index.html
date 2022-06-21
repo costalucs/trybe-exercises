@@ -39,7 +39,19 @@
     const INITIAL_STATE = {
       colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
       index: 0,
+      color: '',
     };
+
+    function criarCor() {
+      const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+      let cor = '#';
+      const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+      for (let i = 0; i < 6; i += 1) {
+        cor += oneChar[aleatorio()];
+      }
+      return cor;
+    }
+    criarCor()
 
     const actionNext = {
       type: 'next'
@@ -55,19 +67,23 @@
 
     const reducer = (state = INITIAL_STATE, action) => {
       const max = INITIAL_STATE.colors.length
+      const { colors } = INITIAL_STATE
+      console.log(colors);
 
       switch (action.type) {
         case 'next':
           if (ind === max - 1) return { ...state }
           ind += 1
-          console.log(ind);
-          return { ...state, index: ind }
+          return { ...state, color: colors[ind] }
 
 
         case 'previous':
           if (ind === 0) return { ...state }
           ind -= 1
-          return { ...state, index: ind }
+          return { ...state, color: colors[ind] }
+        case 'random':
+          const cor = criarCor()
+          return { ...state, color: cor }
 
         default:
           return state
@@ -93,11 +109,9 @@
     })
 
     store.subscribe(() => {
-      const { colors, index } = store.getState()
-      console.log(colors);
-      document.getElementById('value').innerHTML = colors[index]
-      document.getElementById('container').style.backgroundColor = colors[index]
-      console.log(store.getState())
+      const { colors, index, color } = store.getState()
+      document.getElementById('value').innerHTML = color
+      document.getElementById('container').style.backgroundColor = color
     })
 
   </script>
